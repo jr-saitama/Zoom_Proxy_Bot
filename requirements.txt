@@ -1,0 +1,5 @@
+speechrecognition
+pipwin
+google-api-python-client
+playsound
+easygui
