@@ -55,7 +55,7 @@ try:
             end = datetime.now().time()
             duration = datetime.combine(date.min, end) - datetime.combine(date.min, beginning)
             durint = (str(duration)[2:4])
-            if (int(durint) >= 1) and (alert == True):
+            if (int(durint) >= 35) and (alert == True):
                 alert = False
                 easygui.msgbox("Please rejoin, Meeting will end soon", title="Meeting end alert")
 
