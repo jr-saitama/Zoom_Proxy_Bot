@@ -10,10 +10,12 @@ import easygui
 r = sr.Recognizer()
 alert = True
 
+
 def Audio_to_text():
-    with sr.Microphone(device_index= 2) as source:
+    with sr.Microphone(device_index=2) as source:
+        r.adjust_for_ambient_noise(source)
         print("Listening.....")
-        audio  = r.listen(source)
+        audio = r.listen(source, None, 6)
         voice_data = ''
         try:
             voice_data = r.recognize_google(audio)
@@ -26,16 +28,29 @@ def Audio_to_text():
 
 def respond(voice_data, gend):
     r = random.randint(0, 2)
-    if ('tejas') in voice_data:
+    if True:
         playsound("audio/for_"+str(gend)+str(r)+".mp3")
-    if ('pages') in voice_data:
+    if ('prajval') in voice_data:
         playsound("audio/for_"+str(gend)+str(r)+".mp3")
-    if ('98') in voice_data:
+    if ('prajwal see') in voice_data:
+        playsound("audio/for_"+str(gend)+str(r)+".mp3")
+    if ('69') in voice_data:
+        playsound("audio/for_"+str(gend)+str(r)+".mp3")
+    if ('naveen') in voice_data:
+        playsound("audio/for_"+str(gend)+str(r)+".mp3")
+    if ('anushree') in voice_data:
+        playsound("audio/for_"+str(gend)+str(r)+".mp3")
+    if ('ana') in voice_data:
+        playsound("audio/for_"+str(gend)+str(r)+".mp3")
+    if ('69') in voice_data:
+        playsound("audio/for_"+str(gend)+str(r)+".mp3")
+    if ('bindu') in voice_data:
         playsound("audio/for_"+str(gend)+str(r)+".mp3")
 
 # UNCOMMENT THIS TO SEE THE LIST OF YOUR DEVICES
-#print(sr.Microphone.list_microphone_names()) 
+# print(sr.Microphone.list_microphone_names())
 #### change the device_index to the index of the CABLE Output (VB-Audio Virtual) ####
+
 
 print("Follow this format: python3 bot.py <M/F>")
 beginning = datetime.now().time()
@@ -51,13 +66,15 @@ try:
         while True:
             voice_data = Audio_to_text()
             print(voice_data)
-            respond(voice_data.lower(), gend = gend)
+            respond(voice_data.lower(), gend=gend)
             end = datetime.now().time()
-            duration = datetime.combine(date.min, end) - datetime.combine(date.min, beginning)
+            duration = datetime.combine(
+                date.min, end) - datetime.combine(date.min, beginning)
             durint = (str(duration)[2:4])
             if (int(durint) >= 35) and (alert == True):
                 alert = False
-                easygui.msgbox("Please rejoin, Meeting will end soon", title="Meeting end alert")
+                easygui.msgbox(
+                    "Please rejoin, Meeting will end soon", title="Meeting end alert")
 
 except IndexError:
     print("please specify gender of teacher as M/F")
