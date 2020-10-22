@@ -28,8 +28,6 @@ def Audio_to_text():
 
 def respond(voice_data, gend):
     r = random.randint(0, 2)
-    if True:
-        playsound("audio/for_"+str(gend)+str(r)+".mp3")
     if ('prajval') in voice_data:
         playsound("audio/for_"+str(gend)+str(r)+".mp3")
     if ('prajwal see') in voice_data:
@@ -37,14 +35,6 @@ def respond(voice_data, gend):
     if ('69') in voice_data:
         playsound("audio/for_"+str(gend)+str(r)+".mp3")
     if ('naveen') in voice_data:
-        playsound("audio/for_"+str(gend)+str(r)+".mp3")
-    if ('anushree') in voice_data:
-        playsound("audio/for_"+str(gend)+str(r)+".mp3")
-    if ('ana') in voice_data:
-        playsound("audio/for_"+str(gend)+str(r)+".mp3")
-    if ('69') in voice_data:
-        playsound("audio/for_"+str(gend)+str(r)+".mp3")
-    if ('bindu') in voice_data:
         playsound("audio/for_"+str(gend)+str(r)+".mp3")
 
 # UNCOMMENT THIS TO SEE THE LIST OF YOUR DEVICES
